@@ -487,7 +487,7 @@ for index in set_of_sentence_indices_with_heteronyms:
 
 #Only pass perform parsing of 'text' if a heteronym was found in 'combined_sentences_word_list'. This is important, as the parsing step is very computationally onerous, and there
 #may be thousands of heteronyms in the text file.
-nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_trf')
 doc = nlp(combined_sentences)
 combined_sentences_token_list = [[token.text, token.tag_, token.pos_, token.lemma_, token.children] for token in doc]
 combined_sentences_word_list = [i[0] for i in combined_sentences_token_list]
